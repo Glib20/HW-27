@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Контейнер меню */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 40px; /* тільки сірий стовпчик з написом */
+  background-color: #666;
+  color: white;
+  transition: width 0.4s ease;
+  overflow: hidden;
+}
+
+/* Текст "MENU HERE" */
+.menu-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* При наведенні розширюється */
+.side-menu:hover {
+  width: 200px; /* ширина, коли меню відкрите */
+}
+
+/* Список меню */
+.menu-list {
+  list-style: none;
+  padding: 100px 20px;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Показуємо список при наведенні */
+.side-menu:hover .menu-list {
+  opacity: 1;
+}
+
+/* Посилання */
+.menu-list li {
+  margin-bottom: 15px;
+}
+
+.menu-list li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  padding-left: 15px;
+}
+
+.menu-list li a::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  color: orange;
+  font-size: 10px;
+  top: 2px;
+}
+
+.menu-list li a:hover {
+  color: orange;
+}
